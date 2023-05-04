@@ -1,0 +1,249 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+
+  --font-palanquin:'Palanquin', sans-serif;
+  --font-staat:'Staatliches', cursive;
+}
+
+body{
+  background: #E5E5E5;
+
+}
+
+.page{
+  width: 38.4rem;
+
+  margin: 0 auto 2.0rem;
+
+  position: relative;
+}
+
+header{
+  width: 38.4rem;
+  height: 27.9rem;
+
+
+  background: #8E9AAF;
+}
+
+header img{
+  width: 13.7rem;
+  height: 12rem;
+  margin: 3.2rem 12.4rem 0;
+}
+
+.logotipo{
+  width: 100%;
+  height: 4.9rem;
+
+  background: #CBC0D3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-staat);
+  color: white;
+
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 3.4rem;
+  letter-spacing: 2px;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);;
+}
+
+.main{
+  background: #EFF1FF;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+
+  padding: 1.4rem 3.2rem 6.0rem;
+}
+
+.main p{
+  font-family: 'Palanquin', sans-serif;
+
+  width: 30.5rem;
+
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 2.0rem;
+
+
+  text-align: center;
+  
+  /*margin-bottom: 5.0rem;*/
+}
+
+#lorem{
+  display: none;
+}
+
+.space-cards{
+  margin-top: 5.0rem;
+  display: grid;
+  gap: 3.6rem;
+}
+
+.card{
+  position: relative;
+
+  animation: card-baixo-cima 900ms;
+}
+
+#ghost{
+  display: none;
+}
+
+.card h2{
+  font-family: var(--font-staat);
+
+  position: absolute;
+  z-index: 1;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  width: 11.2rem;
+  height: 3.5rem;
+
+  font-weight: 400;
+  font-size: 2.0rem;
+  line-height: 3.4rem;
+
+  padding: 1px 30px;
+  border-radius: 20px;
+
+  color: #4A4E69;
+  background: #FEEAFA;
+
+  animation: nomes-cima-baixo 900ms 200ms backwards;
+}
+
+footer{
+  display: none;
+}
+
+
+/* - KEYFRAMES - */
+
+
+@keyframes nomes-cima-baixo{
+
+  0%{
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-baixo-cima{
+
+  0%{
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* - MEDIAS - */
+
+
+@media (min-width:700px){
+
+  .page{
+    display: flex;
+    
+    margin: 0;
+
+    width: auto;
+  }
+
+  header{
+    height: auto;
+    width: 33rem;
+    position: relative;
+  }
+
+  header img{
+    margin: 3.2rem 10.4rem 0;
+  }
+
+
+  .main .descricao {
+    position: absolute;
+    top: 30rem;
+    left: 1.2rem;
+    color: white;
+
+  }
+
+  /*.main .descricao > p{
+    position: absolute;
+    top: 30rem;
+    left: 3.5rem;
+  }*/
+
+  #lorem{ display: flex;}
+
+  #ghost{ display: grid;}
+
+  .space-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 25rem 16.3rem 25rem;
+
+    margin-left: 4.5rem;
+    margin-right: 4.5rem;
+  } 
+
+  .space-cards div:nth-child(4){
+    grid-area: 2;
+    grid-column: 1;
+    grid-row: 1.2;
+  }
+
+  .space-cards div:nth-child(5){
+    grid-area: 2;
+    grid-column: 2;
+    grid-row: 3;
+  }
+  
+  .space-cards div:nth-child(6){
+    grid-area: 2;
+    grid-column: 3;
+  }
+
+  .card{
+    transition: 200ms;
+  }
+
+  .card:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  footer{
+    margin-top: 7rem;
+
+    display: block;
+  }
+
+}
